@@ -8,9 +8,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-java:
-    name: Build Java App
+  build-and-publish:
+    name: Build, Publish and Deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout code
@@ -25,19 +28,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
-
-  build-and-push-docker:
-    name: Build and Push Docker Image
-    needs: build-java
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
