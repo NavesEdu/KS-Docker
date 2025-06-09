@@ -45,6 +45,9 @@ jobs:
         with:
           name: java-app-build
 
+      - name: Verify downloaded content
+        run: ls -R
+      
       - name: Checkout code
         uses: actions/checkout@v4
 
