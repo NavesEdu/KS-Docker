@@ -28,8 +28,8 @@ You need to have the following software installed on your machine:
 1.  **Clone the repository**
 
     ```bash
-    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
-    cd your-repository-name
+    git clone [https://github.com/NavesEdu/KS-Docker.git](https://github.com/NavesEdu/KS-Docker.git)
+    cd KS-Docker
     ```
 
 2.  **Compile and package the application**
