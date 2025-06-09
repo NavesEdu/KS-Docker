@@ -25,14 +25,14 @@ You need to have the following software installed on your machine:
 
 ### Running the Application
 
-1.  **Clone the repository**
+1.  **Clone the repository and enter the directory:**
 
     ```bash
-    git clone [https://github.com/NavesEdu/KS-Docker.git](https://github.com/NavesEdu/KS-Docker.git)
+    git clone https://github.com/NavesEdu/KS-Docker.git
     cd KS-Docker
     ```
 
-2.  **Compile and package the application**
+2.  **Compile and package the application:**
 
     This command builds the application's JAR file. It skips the tests, as they would require a separate test-specific database configuration.
 
@@ -40,7 +40,7 @@ You need to have the following software installed on your machine:
     mvn clean package -DskipTests
     ```
 
-3.  **Run the environment with Docker Compose**
+3.  **Run the environment with Docker Compose:**
 
     This command will build the API's Docker image and start both the API and the PostgreSQL database containers in detached mode.
     *Note: If you are inside a WSL environment, you may need to start the Docker service first with `sudo service docker start`.*
@@ -49,7 +49,7 @@ You need to have the following software installed on your machine:
     docker compose up --build -d
     ```
 
-4.  **Verify that the containers are running**
+4.  **Verify that the containers are running:**
 
     You should see both `todo_api` and `postgres_db` containers with the status `Up`.
 
@@ -70,10 +70,11 @@ You can use `curl` or any API client like Postman or Insomnia to interact with t
 
     ```json
     {
-      "description": "Learn how to use Docker",
+      "description": "My new task description",
       "done": false
     }
     ```
+
 * **Example `curl` command:**
     ```bash
     curl -X POST http://localhost:8080/tasks \
@@ -89,6 +90,7 @@ You can use `curl` or any API client like Postman or Insomnia to interact with t
     ```bash
     curl http://localhost:8080/tasks
     ```
+
 * **Example Response:**
     ```json
     [
