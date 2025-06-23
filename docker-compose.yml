@@ -6,8 +6,6 @@ services:
     container_name: postgres_db
     networks:
       - todo-network
-    # ESTA SEÇÃO É A CHAVE DO PROBLEMA!
-    # Ela precisa estar exatamente assim.
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypass
@@ -24,6 +22,7 @@ services:
 
   api:
     build: .
+    # image: ghcr.io/navesedu/ks-docker:main
     container_name: todo_api
     networks:
       - todo-network
